@@ -1,0 +1,71 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-4 mt-2">Onboarding Groups and Services</div>
+    <div class="page__content shadow p-4 position-relative">
+      <div class="page__content-data position-absolute text-center" style="width:30%">
+ 
+            
+        <mat-card>    
+            <!-- Title of an Card -->    
+            <mat-card-title>    
+                Service Onboarding Form    
+            </mat-card-title> <br>   
+            
+            <mat-card-content>    
+                <form>  
+                    <table class="demo-full-width" cellspacing="0">    
+                        <tr>    
+                              <td> 
+                                <mat-form-field class="demo-full-width"> 
+                                    <mat-label>GITLAB_GROUP</mat-label> 
+                                    <input matInput placeholder="The gitlab group" >    
+                                </mat-form-field>    
+                            </td>       
+                        </tr>   
+                        <tr>    
+                            <td>    
+                                <mat-form-field class="demo-full-width">    
+                                    <mat-label>PROJECT_NAME</mat-label>
+                                    <input matInput placeholder="Name of the new microservice">    
+                                </mat-form-field>    
+                            </td>        
+                        </tr>
+                        <tr>    
+                            <td colspan="2">    
+                                <mat-form-field class="demo-full-width">    
+                                    <mat-label>JAVA_PACKAGE</mat-label>
+                                    <input matInput placeholder="Java package for the archetype generation">    
+                                </mat-form-field>    
+                            </td>        
+                        </tr> 
+                           
+                        <tr>        
+                            <td>    
+                                <mat-form-field class="demo-full-width">    
+                                    <mat-select placeholder="ARCH_TYPE" [(value)]="selected">    
+                                        <mat-option value="1">Simple</mat-option>    
+                                        <mat-option value="2">MongoDB</mat-option>    
+                                        <mat-option value="3">Redis</mat-option>    
+                                        <mat-option value="4">Twin</mat-option>
+                                        <mat-option value="5">Module</mat-option>
+                                        <mat-option value="6">Login</mat-option>
+                                        <mat-option value="7">Application</mat-option>
+                                        <mat-option value="8">Kafka</mat-option>
+                                    </mat-select>    
+                                </mat-form-field>    
+                            </td>    
+                        </tr>           
+                        <tr>    
+                            <td colspan="2" class="content-center">    
+                                <button mat-raised-button style="background-color:#1e293b; color:white">Submit</button>      
+                            </td>    
+                        </tr>    
+                    </table>  
+                </form>    
+            </mat-card-content>    
+        </mat-card>   
+
+      </div>
+    </div>
+  </div>
+  
+  

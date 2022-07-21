@@ -21,6 +21,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { CustomMaterialModule } from './core/material.module';
+import { OnboardingFormComponent } from './service-onboarding-form/onboarding-form.component';
+import { GroupOnboardingFormComponent } from './group-onboarding-form/group-onboarding-form.component';
+import { OnboardingComponent } from './onboarding/onboarding.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,9 @@ import { CustomMaterialModule } from './core/material.module';
     DashboardComponent,
     SidenavComponent,
     LoginComponent,
+    OnboardingFormComponent,
+    GroupOnboardingFormComponent,
+    OnboardingComponent,
   ],
   imports: [
     BrowserModule,

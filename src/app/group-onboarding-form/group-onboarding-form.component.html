@@ -1,0 +1,63 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-4 mt-2">Onboarding Groups and Services</div>
+    <div class="page__content shadow p-4 position-relative">
+      <div class="page__content-data position-absolute text-center" style="width:30%">
+            <mat-card>    
+                <!-- Title of an Card -->    
+                <mat-card-title>    
+                    Group Onboarding Form    
+                </mat-card-title> <br>   
+                
+                <mat-card-content>    
+                    <form>  
+                        <table class="demo-full-width" cellspacing="0">    
+                            <tr>    
+                                  <td> 
+                                    <mat-form-field class="demo-full-width"> 
+                                        <mat-label>GITLAB_GROUP</mat-label> 
+                                        <input matInput placeholder="The gitlab group" >    
+                                    </mat-form-field>    
+                                </td>       
+                            </tr>   
+                             <br>       
+                                <tr><td>
+                                    <mat-label style="color:#909090">Choose infra components:</mat-label>
+                                </td></tr>
+                                     <br>
+                                <tr>
+                                    <td>
+                                        <mat-checkbox color="primary" > 
+                                            Redis
+                                          </mat-checkbox>
+                                    </td>
+                                </tr> 
+                                <br>
+                                <tr>
+                                    <td>
+                                        <mat-checkbox color="primary"> 
+                                            MongoDB
+                                          </mat-checkbox>
+                                    </td>
+                                </tr>  
+                                <br>
+                                <tr>
+                                    <td>
+                                        <mat-checkbox color="primary"> 
+                                            Kafka
+                                          </mat-checkbox>
+                                    </td>
+                                </tr>    
+                                <br>
+                            <tr>    
+                                <td colspan="2" class="content-center">    
+                                    <button mat-raised-button style="background-color:#1e293b; color:white">Submit</button>      
+                                </td>    
+                            </tr>    
+                        </table>  
+                    </form>    
+                </mat-card-content>    
+            </mat-card> 
+      </div>
+    </div>
+  </div>
+  
