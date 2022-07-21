@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CookiesService } from '../services/cookies.service';
+import { GitlabService } from '../services/gitlab.service';
 
 import { Router } from '@angular/router';
 
@@ -9,17 +11,21 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private _cookies: CookiesService) { }
 
-  username: string;
-  gitlabtoken: string;
-  jenkinstoken: string;
+  jenkinId: string;
+  jenkinToken: string;
+  gitlabToken: string;
 
   ngOnInit(): void {
   }
 
   login() : void {
-    if(this.username == 'admin' && this.gitlabtoken == 'admin' && this.jenkinstoken=='admin'){
+    this._cookies.removeCookie();
+    if(this.jenkinId.length!=0 && this.jenkinToken.length!=0 && this.gitlabToken.length !=0){
+      this._cookies.setCookie("JenkinId", this.jenkinId);
+      this._cookies.setCookie("JenkinToken", this.jenkinToken);
+      this._cookies.setCookie("GitlabToken", this.gitlabToken);
       this.router.navigate(["home"]);
      }else {
        alert("Invalid credentials");
