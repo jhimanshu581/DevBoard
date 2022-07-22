@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CookiesService } from '../services/cookies.service';
+import { GitlabService } from '../services/gitlab.service';
+import { JenkinsService } from '../services/jenkins.service';
 
 @Component({
   selector: 'app-group-onboarding-form',
@@ -7,12 +10,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GroupOnboardingFormComponent implements OnInit {
 
-  constructor() {
+  constructor(private _cookies: CookiesService,private _gitlab: GitlabService, private _jenkins: JenkinsService) {
    }
 
-  selected: boolean;
+  gitlabGroup: string;
+  isRedis: boolean;
+  isKafka: boolean;
+  isMongodb: boolean;
 
   ngOnInit(): void {
+  }
+
+  groupOnboard() : void{
+
+    this._gitlab.createGitlabGroup('test7').subscribe(firstCallData => {
+      console.log(firstCallData);
+      this._gitlab.addBotAsMemberToGroup(JSON.parse(JSON.stringify(firstCallData))['id']).subscribe(secondCallData => {
+        console.log(secondCallData);
+        this._jenkins.onBoardingGroup(JSON.parse(JSON.stringify(firstCallData))['path'], this.isRedis === undefined ? "false" : "true", this.isKafka === undefined ? "false" : "true", this.isMongodb === undefined ? "false" : "true").subscribe( thirdCallData => {
+          console.log(thirdCallData);
+        })
+      });
+    });
+    console.log(this.gitlabGroup);
+    console.log(this.isRedis === undefined ? "false" : "true");
+    console.log(this.isKafka);
+    console.log(this.isMongodb);
+
+
   }
 
 }

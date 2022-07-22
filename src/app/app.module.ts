@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './core/app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
@@ -24,6 +25,8 @@ import { CustomMaterialModule } from './core/material.module';
 import { OnboardingFormComponent } from './service-onboarding-form/onboarding-form.component';
 import { GroupOnboardingFormComponent } from './group-onboarding-form/group-onboarding-form.component';
 import { OnboardingComponent } from './onboarding/onboarding.component';
+import { GitlabService } from './services/gitlab.service';
+import { JenkinsService } from './services/jenkins.service';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,7 @@ import { OnboardingComponent } from './onboarding/onboarding.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatGridListModule,
     MatCardModule,

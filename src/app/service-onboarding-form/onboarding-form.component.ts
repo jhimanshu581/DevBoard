@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JenkinsService } from '../services/jenkins.service';
 
 @Component({
   selector: 'app-onboarding-form',
@@ -7,11 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OnboardingFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _jenkins: JenkinsService) { }
 
-  selected: boolean;
+  gitlabGroup: string;
+  projectName: string;
+  javaPackage: string;
+  archType: string;
 
   ngOnInit(): void {
   }
 
+  serviceOnboard(): void{
+    if(this.archType === undefined){
+      alert("Select an architecture type");
+      return;
+    }
+    this._jenkins.onBoardingService(this.gitlabGroup,this.projectName,this.javaPackage, this.archType).subscribe(data => {
+      console.log(data);
+    })
+  }
 }

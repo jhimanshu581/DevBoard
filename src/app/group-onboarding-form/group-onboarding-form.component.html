@@ -15,7 +15,7 @@
                                   <td> 
                                     <mat-form-field class="demo-full-width"> 
                                         <mat-label>GITLAB_GROUP</mat-label> 
-                                        <input matInput placeholder="The gitlab group" >    
+                                        <input matInput placeholder="The gitlab group" [(ngModel)]="gitlabGroup" name="gitlabGroup" required>    
                                     </mat-form-field>    
                                 </td>       
                             </tr>   
@@ -26,7 +26,7 @@
                                      <br>
                                 <tr>
                                     <td>
-                                        <mat-checkbox color="primary" > 
+                                        <mat-checkbox color="primary"  [(ngModel)]="isRedis" name="isRedis"> 
                                             Redis
                                           </mat-checkbox>
                                     </td>
@@ -34,7 +34,7 @@
                                 <br>
                                 <tr>
                                     <td>
-                                        <mat-checkbox color="primary"> 
+                                        <mat-checkbox color="primary" [(ngModel)]="isMongodb" name="isMongodb"> 
                                             MongoDB
                                           </mat-checkbox>
                                     </td>
@@ -42,7 +42,7 @@
                                 <br>
                                 <tr>
                                     <td>
-                                        <mat-checkbox color="primary"> 
+                                        <mat-checkbox color="primary" [(ngModel)]="isKafka" name="isKafka"> 
                                             Kafka
                                           </mat-checkbox>
                                     </td>
@@ -50,7 +50,7 @@
                                 <br>
                             <tr>    
                                 <td colspan="2" class="content-center">    
-                                    <button mat-raised-button style="background-color:#1e293b; color:white">Submit</button>      
+                                    <button mat-raised-button style="background-color:#1e293b; color:white" (click)="groupOnboard()">Submit</button>      
                                 </td>    
                             </tr>    
                         </table>  
