@@ -46,3 +46,15 @@ mat-toolbar-row {
  .tp-selected-value {
     margin: 15px 0;
  }
+ .page{
+    &__content {
+        min-height: calc(115vh - 180px);
+        margin-top: -2rem;
+        &-data {
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+      }
+
+ }
