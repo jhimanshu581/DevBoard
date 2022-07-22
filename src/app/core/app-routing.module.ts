@@ -3,9 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { HomeComponent } from '../home/home.component';
 import { LoginComponent } from '../login/login.component';
-import { OnboardingFormComponent } from '../service-onboarding-form/onboarding-form.component';
+import { OnboardingFormComponent } from '../onboarding/service-onboarding-form/onboarding-form.component';
 import { OnboardingComponent } from '../onboarding/onboarding.component';
-import { GroupOnboardingFormComponent } from '../group-onboarding-form/group-onboarding-form.component';
+import { GroupOnboardingFormComponent } from '../onboarding/group-onboarding-form/group-onboarding-form.component';
+import { RolesComponent } from '../roles/roles.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'onboarding-form', component: OnboardingFormComponent },
   { path: 'onboarding', component: OnboardingComponent },
   { path: 'group-onboarding-form', component: GroupOnboardingFormComponent },
+  { path: 'roles', component: RolesComponent },
 ];
 
 @NgModule({

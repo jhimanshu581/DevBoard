@@ -1,4 +1,4 @@
-@import "../home/home.component.scss";   
+@import "../../home/home.component.scss";   
 
 .mat-card {    
     text-align: -webkit-center;  
@@ -45,14 +45,3 @@ mat-toolbar-row {
 .content-center {    
     text-align: -webkit-center;    
 }   
-
-.example-section {
-    display: flex;
-    align-content: center;
-    align-items: center;
-    height: 60px;
-  }
-  
-.example-margin {
-    margin: 0 10px;
-  }

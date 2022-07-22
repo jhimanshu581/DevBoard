@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CookiesService } from '../services/cookies.service';
-import { GitlabService } from '../services/gitlab.service';
-import { JenkinsService } from '../services/jenkins.service';
+import { CookiesService } from '../../services/cookies.service';
+import { GitlabService } from 'src/app/services/gitlab.service';
+import { JenkinsService } from 'src/app/services/jenkins.service';
 
 @Component({
   selector: 'app-group-onboarding-form',

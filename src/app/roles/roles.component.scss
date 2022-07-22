@@ -1,0 +1,48 @@
+@import "../home/home.component.scss";
+.mat-card {
+    text-align: -webkit-center;
+}
+.demo-toolbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.demo-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+.demo-full-width {
+    width: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+}
+mat-card {
+    max-width: 100%;
+    margin: 2em auto;
+    text-align: center;
+}
+mat-toolbar-row {
+    justify-content: space-between;
+}
+.done {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+}
+.content-center {
+    text-align: -webkit-center;
+}
+  .tp-radio-group {
+    display: inline-flex;
+    flex-direction: row;
+ }
+ .tp-radio-button {
+    margin: 5px;
+ }
+ .tp-selected-value {
+    margin: 15px 0;
+ }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { JenkinsService } from '../services/jenkins.service';
+import { JenkinsService } from 'src/app/services/jenkins.service';
 
 @Component({
   selector: 'app-onboarding-form',
