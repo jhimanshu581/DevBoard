@@ -32,4 +32,9 @@ export class HeaderComponent implements OnInit {
   toggleSidebar() {
     this.toggleSidebarForMe.emit();
   }
+
+  logout():void{
+    this._cookies.removeCookie();
+    this.router.navigate(['/login'])
+  }
 }
