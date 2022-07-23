@@ -19,7 +19,6 @@ export class RefreshTokenService {
          }
 
          return this.http
-                    .post(urls.generateAccessToken, body, { headers: headers })
-                    .subscribe(res => res.toString);
+                    .post(urls.generateAccessToken, body, { headers: headers });
     }       
 }

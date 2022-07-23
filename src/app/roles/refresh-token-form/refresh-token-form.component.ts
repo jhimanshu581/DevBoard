@@ -16,6 +16,6 @@ export class RefreshTokenFormComponent implements OnInit {
   }
 
   generateAccessToken(): void{
-    this._refreshToken.generateToken(this.refreshToken).service(data=>{console.log(data);})
+    this._refreshToken.generateToken(this.refreshToken).subscribe(data=>{console.log(data);})
   }
 }
