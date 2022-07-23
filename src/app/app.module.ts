@@ -28,6 +28,7 @@ import { OnboardingComponent } from './onboarding/onboarding.component';
 import { GitlabService } from './services/gitlab.service';
 import { JenkinsService } from './services/jenkins.service';
 import { RolesComponent } from './roles/roles.component';
+import { RefreshTokenFormComponent } from './roles/refresh-token-form/refresh-token-form.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { RolesComponent } from './roles/roles.component';
     GroupOnboardingFormComponent,
     OnboardingComponent,
     RolesComponent,
+    RefreshTokenFormComponent,
   ],
   imports: [
     BrowserModule,

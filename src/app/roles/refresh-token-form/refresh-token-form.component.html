@@ -1,0 +1,38 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-4 mt-2">Creation of Roles</div>
+    <div class="page__content shadow p-4 position-relative">
+      <div class="page__content-data position-absolute text-center" style="width:30%">
+ 
+            
+        <mat-card>    
+            <!-- Title of an Card -->    
+            <mat-card-title>    
+                Generate Access Token    
+            </mat-card-title> <br>   
+            
+            <mat-card-content>    
+                <form>  
+                    <table class="demo-full-width" cellspacing="0">    
+                        <tr>    
+                              <td> 
+                                <mat-form-field class="demo-full-width"> 
+                                    <mat-label>REFRESH TOKEN</mat-label> 
+                                    <input matInput placeholder="Refresh Token" [(ngModel)]="refreshToken" name="refreshToken" required>    
+                                </mat-form-field>    
+                            </td>       
+                        </tr>   
+                        <tr>    
+                            <td colspan="2" class="content-center">    
+                                <button mat-raised-button style="background-color:#1e293b; color:white" (click)="generateAccessToken()">Generate</button>      
+                            </td>    
+                        </tr>    
+                    </table>  
+                </form>    
+            </mat-card-content>    
+        </mat-card>   
+
+      </div>
+    </div>
+  </div>
+  
+  

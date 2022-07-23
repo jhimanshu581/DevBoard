@@ -7,6 +7,7 @@ import { OnboardingFormComponent } from '../onboarding/service-onboarding-form/o
 import { OnboardingComponent } from '../onboarding/onboarding.component';
 import { GroupOnboardingFormComponent } from '../onboarding/group-onboarding-form/group-onboarding-form.component';
 import { RolesComponent } from '../roles/roles.component';
+import { RefreshTokenFormComponent } from '../roles/refresh-token-form/refresh-token-form.component';
 import { IsAccessibleGuard } from '../is-accessible.guard';
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'onboarding', component: OnboardingComponent, canActivate: [IsAccessibleGuard] },
   { path: 'group-onboarding-form', component: GroupOnboardingFormComponent, canActivate: [IsAccessibleGuard] },
   { path: 'roles', component: RolesComponent, canActivate: [IsAccessibleGuard] },
+  { path: 'refresh-token-form', component: RefreshTokenFormComponent, canActivate: [IsAccessibleGuard] },
   { path: '**', redirectTo: 'login' },
 ];
 
