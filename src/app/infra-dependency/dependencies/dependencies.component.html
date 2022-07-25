@@ -1,0 +1,44 @@
+<div *ngIf="dependencies.length!=0">
+    <br>       
+<tr><td>
+    <mat-label style="color:#909090">Choose infra components:</mat-label>
+</td></tr>
+</div>
+<div *ngFor="let dependency of dependencies">
+<br>
+<div *ngIf="dependency=='kafka'">
+<tr >
+    <td>
+        <mat-checkbox color="primary" [(ngModel)]="isKafka" checked="()=>this.isKafkaEmitter.emit(this.isKafka);" > 
+            {{dependency}}
+        </mat-checkbox>
+    </td>
+</tr>
+</div>
+<div *ngIf="dependency=='mongodb'">
+    <tr >
+        <td>
+            <mat-checkbox color="primary" [(ngModel)]="isMongodb" checked="()=>this.isKafkaEmitter.emit(this.isKafka);"> 
+                {{dependency}}
+            </mat-checkbox>
+        </td>
+    </tr>
+    </div>
+    <div *ngIf="dependency=='redis'">
+        <tr >
+            <td>
+                <mat-checkbox color="primary" [(ngModel)]="isRedis" checked="()=>this.isKafkaEmitter.emit(this.isKafka);"> 
+                    {{dependency}}
+                </mat-checkbox>
+            </td>
+        </tr>
+        </div>
+</div>
+<br/>
+<div *ngIf="dependencies.length!=0">
+<tr>    
+    <td colspan="2" class="content-center">    
+        <button mat-raised-button style="background-color:#1e293b; color:white" (click)="submit()">Submit</button>      
+    </td>    
+</tr>  
+</div>

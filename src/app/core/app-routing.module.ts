@@ -9,6 +9,7 @@ import { GroupOnboardingFormComponent } from '../onboarding/group-onboarding-for
 import { RolesComponent } from '../roles/roles.component';
 import { RefreshTokenFormComponent } from '../roles/refresh-token-form/refresh-token-form.component';
 import { IsAccessibleGuard } from '../is-accessible.guard';
+import { InfraDependencyComponent } from '../infra-dependency/infra-dependency.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'group-onboarding-form', component: GroupOnboardingFormComponent, canActivate: [IsAccessibleGuard] },
   { path: 'roles', component: RolesComponent, canActivate: [IsAccessibleGuard] },
   { path: 'refresh-token-form', component: RefreshTokenFormComponent, canActivate: [IsAccessibleGuard] },
+  { path: 'infra-dependency', component: InfraDependencyComponent, canActivate: [IsAccessibleGuard] },
   { path: '**', redirectTo: 'login' },
 ];
 

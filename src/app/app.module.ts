@@ -29,6 +29,8 @@ import { GitlabService } from './services/gitlab.service';
 import { JenkinsService } from './services/jenkins.service';
 import { RolesComponent } from './roles/roles.component';
 import { RefreshTokenFormComponent } from './roles/refresh-token-form/refresh-token-form.component';
+import { InfraDependencyComponent } from './infra-dependency/infra-dependency.component';
+import { DependenciesComponent } from './infra-dependency/dependencies/dependencies.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { RefreshTokenFormComponent } from './roles/refresh-token-form/refresh-to
     OnboardingComponent,
     RolesComponent,
     RefreshTokenFormComponent,
+    InfraDependencyComponent,
+    DependenciesComponent,
   ],
   imports: [
     BrowserModule,

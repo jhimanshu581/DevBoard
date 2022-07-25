@@ -1,0 +1,42 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-4 mt-2"> Add Infra Dependency   </div>
+    <div class="page__content shadow p-4 position-relative">
+      <div class="page__content-data position-absolute text-center" style="width:30%">
+ 
+            
+        <mat-card>    
+            <!-- Title of an Card -->    
+            <mat-card-title>    
+            </mat-card-title> <br>   
+                Select a Group
+            <mat-card-content>    
+                <br/>
+                <form>  
+                    <table class="demo-full-width" cellspacing="0">   
+                        <tr>        
+                            <td>    
+                                    <mat-select placeholder="Groups" (selectionChange)="groupChange($event)"> 
+                                        <div *ngFor="let group of groups | keyvalue" >  
+                                            <mat-option value="{{group.value}}">{{group.key}}</mat-option>
+                                        </div>     
+                                    </mat-select>    
+                            </td>    
+                        </tr> 
+                        <br/>                              
+                        <tr *ngIf="selectedValue!=null">
+                            <td>
+                                <app-dependencies groupId="{{selectedValue}}" groupName="{{groupName}}"></app-dependencies>
+                            </td>
+                        </tr> 
+                             
+                       
+                    </table>  
+                </form>    
+            </mat-card-content>    
+        </mat-card>   
+
+      </div>
+    </div>
+  </div>
+  
+  

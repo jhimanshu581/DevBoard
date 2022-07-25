@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       this._cookies.setCookie("JenkinId", this.jenkinId);
       this._cookies.setCookie("JenkinToken", this.jenkinToken);
       this._cookies.setCookie("GitlabToken", this.gitlabToken);
-      this.router.navigate(["home"]);
+      this.router.navigate(["dashboard"]);
      }else {
        alert("Invalid credentials");
      }

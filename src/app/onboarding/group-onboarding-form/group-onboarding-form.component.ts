@@ -23,7 +23,7 @@ export class GroupOnboardingFormComponent implements OnInit {
 
   groupOnboard() : void{
 
-    this._gitlab.createGitlabGroup('test7').subscribe(firstCallData => {
+    this._gitlab.createGitlabGroup(this.gitlabGroup).subscribe(firstCallData => {
       console.log(firstCallData);
       this._gitlab.addBotAsMemberToGroup(JSON.parse(JSON.stringify(firstCallData))['id']).subscribe(secondCallData => {
         console.log(secondCallData);
