@@ -11,14 +11,9 @@ export class RefreshTokenService {
     constructor(private http: HttpClient) { }
 
     generateToken(refreshToken: string) {
-         const headers = new HttpHeaders()
-             .set('Content-type', 'application/x-www-form-urlencoded');
-
-         const body = {
-             refresh_token: 'refreshToken'
-         }
-
-         return this.http
-                    .post(urls.generateAccessToken, body, { headers: headers });
+        let formdata = new FormData();
+        formdata.append('refresh_token',refreshToken);
+         console.log(refreshToken);
+         return this.http.post(urls.generateAccessToken, formdata);
     }       
 }
