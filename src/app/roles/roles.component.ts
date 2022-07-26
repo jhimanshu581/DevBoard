@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RolesService } from '../services/roles.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-roles',
@@ -7,14 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RolesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _roleService: RolesService, private _Activatedroute:ActivatedRoute) { 
+    
+  }
 
   selected: boolean;
+  accessToken:string;
   serviceId: string;
   name: string;
   displayName: string;
   description: string;
-  permissions: string;
   onAccess: boolean;
   visible: boolean;
   type:string;
@@ -23,8 +27,15 @@ export class RolesComponent implements OnInit {
   
 
   ngOnInit(): void {
+    this._Activatedroute.queryParams.subscribe(params => {
+      this.accessToken=params ['id'];
+      console.log(this.accessToken);
+})
   }
 
   createRole(): void {
+    this._roleService.createRoleService(this.serviceId, this.name, this.displayName, this.description, this.onAccess, this.visible, this.type, this.composable, this.bundled, this.accessToken )
+    //.subscribe(data=>{console.log(data);})
+    
   }
 }

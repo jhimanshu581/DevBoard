@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { urls } from './urls';
-import { CookiesService } from './cookies.service';
 
 @Injectable({
     providedIn: 'root'
@@ -9,21 +8,30 @@ import { CookiesService } from './cookies.service';
 
 export class RolesService {
 
-    constructor(private http: HttpClient, private _cookie :CookiesService) { }
+    constructor(private http: HttpClient) { }
   
-    createRoleService(serviceId: string, name: string, displayName: string, description:string, permissions:string, onAccess: string, visible: string, type:string, composable:string, bundled:string ){
+    createRoleService(serviceId: string, name: string, displayName: string, description:string, onAccess: boolean, visible: boolean, type:string, composable:boolean, bundled:boolean, accessToken:string ){
       let formdata = new FormData();
       formdata.append('SERVICE ID',serviceId);
-      formdata.append('NAME', name);
-      formdata.append('DISPLAY NAME', displayName);
-      formdata.append('DESCRIPTION', description);
-      formdata.append('PERMISSIONS', permissions);
-      formdata.append('On Access', onAccess);
-      formdata.append('Visible', visible);
-      formdata.append('TYPE', type);
-      formdata.append('Composable',composable);
-      formdata.append('Bundled', bundled);
-      return this.http.post(urls.createRole, formdata);
+      formdata.append('name', name);
+      formdata.append('displayName', displayName);
+      formdata.append('description', description);
+      formdata.append('onAccess', onAccess + '');
+      formdata.append('visible', visible + '');
+      formdata.append('type', type);
+      formdata.append('composable',composable + '');
+      formdata.append('bundled', bundled + '');
+      
+      const formDataObj: any = {};
+      formdata.forEach((value, key) => (formDataObj[key] = value));
+      var json = JSON.stringify(formDataObj);
+      console.log(json); return 1;
+
+      // return this.http.post(urls.createRole.replace('{serviceId}',serviceId+''), json,{
+      //   headers : {
+      //     'Authorization' : 'Bearer ' + accessToken
+      //   }
+      // });
     }
   }
 
