@@ -10,6 +10,7 @@ import { RolesComponent } from '../roles/roles.component';
 import { RefreshTokenFormComponent } from '../roles/refresh-token-form/refresh-token-form.component';
 import { IsAccessibleGuard } from '../is-accessible.guard';
 import { InfraDependencyComponent } from '../infra-dependency/infra-dependency.component';
+import { TrackStatusComponent } from '../track-status/track-status.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'roles', component: RolesComponent, canActivate: [IsAccessibleGuard] },
   { path: 'refresh-token-form', component: RefreshTokenFormComponent, canActivate: [IsAccessibleGuard] },
   { path: 'infra-dependency', component: InfraDependencyComponent, canActivate: [IsAccessibleGuard] },
+  { path: 'track-status', component: TrackStatusComponent, canActivate: [IsAccessibleGuard] },
   { path: '**', redirectTo: 'login' },
 ];
 

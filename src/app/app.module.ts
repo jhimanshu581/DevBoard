@@ -31,6 +31,8 @@ import { RolesComponent } from './roles/roles.component';
 import { RefreshTokenFormComponent } from './roles/refresh-token-form/refresh-token-form.component';
 import { InfraDependencyComponent } from './infra-dependency/infra-dependency.component';
 import { DependenciesComponent } from './infra-dependency/dependencies/dependencies.component';
+import { TrackStatusComponent } from './track-status/track-status.component';
+import { ConsoleOutputComponent } from './console-output/console-output.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { DependenciesComponent } from './infra-dependency/dependencies/dependenc
     RefreshTokenFormComponent,
     InfraDependencyComponent,
     DependenciesComponent,
+    TrackStatusComponent,
+    ConsoleOutputComponent,
   ],
   imports: [
     BrowserModule,

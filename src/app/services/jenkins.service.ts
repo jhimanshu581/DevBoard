@@ -37,4 +37,16 @@ export class JenkinsService {
       }
     });
   }
+
+  getAllBuilds(jobName: string){
+    return this.http.get(urls.getAllBuildsOfSpecifiedJob.replace("{job-name}",jobName));
+  }
+
+  getConsoleOutput(jobName:string, buildId: string){
+    let url = urls.getFullConsoleOutput;
+    url = url.replace("{job-name}",jobName);
+    url = url.replace("{build-id}",buildId);
+    return this.http.get(url,{ responseType: 'text' });
+  }
+  
 }

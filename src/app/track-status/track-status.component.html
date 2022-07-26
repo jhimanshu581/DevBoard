@@ -1,0 +1,68 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-4 mt-2"> Track Status </div>
+    <div class="page__content shadow p-4 position-relative">
+        <div class="page__content-data position-absolute text-center" style="width:30%">
+
+
+            <mat-card>
+                <!-- Title of an Card -->
+                <mat-card-title>
+                </mat-card-title> <br>
+                Select a Job
+                <mat-card-content>
+                    <br />
+                    <form>
+                        <table class="demo-full-width" cellspacing="0">
+                            <tr>
+                                <td>
+                                    <mat-select placeholder="Jobs" (selectionChange)="jobChange($event)">
+                                        <mat-option value="ServiceOnBoarding">Service OnBoarding</mat-option>
+                                        <mat-option value="GroupOnBoarding">Group OnBoarding</mat-option>
+                                    </mat-select>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                    <div *ngIf="buildData!=undefined">
+                        <div style="margin: 50px auto; width: 100%;"></div>
+                        <cdk-virtual-scroll-viewport class="viewport" itemSize="10">
+                            <table class="demo-full-width" [cellPadding]="5" [cellSpacing]="5">
+                                <tr>
+                                    <th>Id</th>
+                                    <th></th>
+                                    <th>Result</th>
+                                    <th>Time</th>
+                                    <th>Console Output</th>
+                                </tr>
+                                <tbody>
+                                    <tr *cdkVirtualFor="let build of buildData.builds">
+                                        <td>
+                                            <a href="{{build.url}}">{{build.id}}</a>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <img *ngIf="build.result=='SUCCESS'" src="./assets/logo/success.png"
+                                                width="20px" title="Success"/>
+                                            <img *ngIf="build.result=='FAILURE'" src="./assets/logo/failure.png"
+                                                width="20px" title="Failure"/>
+                                            <img *ngIf="build.result=='ABORTED'" src="./assets/logo/abort.png"
+                                                width="20px"  title="Aborted"/>
+                                        </td>
+                                        <td>
+                                            {{getDateFromTimeStamp(build.timestamp)}}
+                                        </td>
+                                        <td>
+                                            <button (click)="getConsoleOutput(build.id)"><img
+                                                    src="./assets/logo/terminal.svg" width="20px" /></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </cdk-virtual-scroll-viewport>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+
+        </div>
+    </div>
+</div>

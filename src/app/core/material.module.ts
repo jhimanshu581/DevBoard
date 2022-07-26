@@ -24,6 +24,7 @@ import {  ErrorStateMatcher } from '@angular/material/core';
 import { ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';    
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ScrollingModule } from "@angular/cdk/scrolling";
 
 @NgModule({
   imports: [
@@ -49,6 +50,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatOptionModule,      
     MatSlideToggleModule,
     MatCheckboxModule,
+    ScrollingModule,
   ],
   exports: [
     CommonModule,
@@ -69,6 +71,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatSelectModule,      
     MatOptionModule,      
     MatSlideToggleModule,
+    ScrollingModule,
     MatCheckboxModule,
    ],
    providers: [      
