@@ -25,13 +25,14 @@ export class RolesService {
       const formDataObj: any = {};
       formdata.forEach((value, key) => (formDataObj[key] = value));
       var json = JSON.stringify(formDataObj);
-      console.log(json); return 1;
+      console.log(json);
 
-      // return this.http.post(urls.createRole.replace('{serviceId}',serviceId+''), json,{
-      //   headers : {
-      //     'Authorization' : 'Bearer ' + accessToken
-      //   }
-      // });
+      return this.http.post(urls.createRole.replace('{serviceId}',serviceId+''), json,{
+        headers : {
+          'Authorization' : 'Bearer ' + accessToken,
+          'Content-Type' : 'application/json'
+        }
+      });
     }
   }
 

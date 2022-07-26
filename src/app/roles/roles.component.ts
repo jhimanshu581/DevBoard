@@ -35,7 +35,7 @@ export class RolesComponent implements OnInit {
 
   createRole(): void {
     this._roleService.createRoleService(this.serviceId, this.name, this.displayName, this.description, this.onAccess, this.visible, this.type, this.composable, this.bundled, this.accessToken )
-    //.subscribe(data=>{console.log(data);})
+    .subscribe(data=>{console.log(data);})
     
   }
 }
