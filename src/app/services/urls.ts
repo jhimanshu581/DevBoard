@@ -10,5 +10,6 @@ export class urls{
     static getDependency = "https://gitlab.eng.vmware.com/api/v4/projects/{project-id}/repository/tree";
     static addCommonService = "https://gitlab.eng.vmware.com//api/v4/projects/";
     static getAllBuildsOfSpecifiedJob = "https://horizon-devfw.svc.eng.vmware.com/job/{job-name}/api/json?tree=builds[name,result,url,timestamp,id]"
-    static getFullConsoleOutput = "https://horizon-devfw.svc.eng.vmware.com/job/{job-name}/{build-id}/logText/progressiveText"
+    static getFullConsoleOutput = "https://horizon-devfw.svc.eng.vmware.com/job/{job-name}/{build-id}/logText/progressiveText";
+    static getJobIdFromQueueId = "https://horizon-devfw.svc.eng.vmware.com/job/{job-name}/api/json?tree=builds[id,queueId,result]"
 }

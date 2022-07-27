@@ -56,3 +56,18 @@ mat-toolbar-row {
 .example-margin {
     margin: 0 10px;
   }
+
+.card{
+    color: white; 
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px; 
+    height: 80px; 
+    width: 400px; 
+    margin: 8px;
+    background-color: #1e293b; 
+    border-radius: 15px;
+    text-align: center;
+    font-size: large;
+}

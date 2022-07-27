@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { urls } from './urls';
 import { CookiesService } from './cookies.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,8 @@ export class JenkinsService {
     return this.http.post(urls.groupOnboarding, formdata,{
       headers : {
         'Authorization' : 'Basic ' + btoa(this._cookie.getCookie("JenkinId")+":"+this._cookie.getCookie("JenkinToken"))
-      }
+      },
+      observe: 'response'
     });
   }
 
@@ -32,9 +34,11 @@ export class JenkinsService {
     formdata.append('ARCHETYPE_TYPE',archType);
 
     return this.http.post(urls.serviceOnboarding, formdata,{
-      headers : {
-        'Authorization' : 'Basic ' + btoa(this._cookie.getCookie("JenkinId")+":"+this._cookie.getCookie("JenkinToken"))
-      }
+      
+       headers : {
+         'Authorization' : 'Basic ' + btoa(this._cookie.getCookie("JenkinId")+":"+this._cookie.getCookie("JenkinToken")),        
+       },
+       observe: 'response'
     });
   }
 
@@ -47,6 +51,16 @@ export class JenkinsService {
     url = url.replace("{job-name}",jobName);
     url = url.replace("{build-id}",buildId);
     return this.http.get(url,{ responseType: 'text' });
+  }
+
+  getJobIdandResult(jobName: string, queueId: string){
+    // var temp= queueId.match(/(\d+)/);
+     let url = urls.getJobIdFromQueueId;
+    // url = url.replace("{job-name}",jobName);
+    // url = url.replace("{queue-id}",temp?temp[temp?temp.length-1:0]:'');
+    url = url.replace("{job-name}",jobName);
+    
+    return this.http.get(url);
   }
   
 }
