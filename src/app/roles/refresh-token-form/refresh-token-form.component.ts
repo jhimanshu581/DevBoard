@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RefreshTokenService } from 'src/app/services/refreshtoken.service';
 import { Router } from '@angular/router';
-import { RolesComponent } from '../roles.component';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-refresh-token-form',
@@ -20,7 +18,16 @@ export class RefreshTokenFormComponent implements OnInit {
   }
 
   generateAccessToken(): void{
-    this._refreshToken.generateToken(this.refreshToken).subscribe(data=>{this.accessToken=JSON.parse(JSON.stringify(data))['access_token'];this.router.navigate(["/roles"], { queryParams: { id : this.accessToken } });})
+    this._refreshToken.generateToken(this.refreshToken)
+    .subscribe({
+      next:data=>{this.accessToken=JSON.parse(JSON.stringify(data))['access_token'];
+        alert("Access token created successfully");
+        this.router.navigate(["/roles"], { queryParams: { id : this.accessToken } });},
+      error:error => {
+        console.log(error);
+          alert("There was a problem in creating the access token. Please enter valid refresh token.");
+      }
+  })
 
   }
 }

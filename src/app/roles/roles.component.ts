@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RolesService } from '../services/roles.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-roles',
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RolesComponent implements OnInit {
 
-  constructor(private _roleService: RolesService, private _Activatedroute:ActivatedRoute) { 
+  constructor(private _roleService: RolesService, private _Activatedroute:ActivatedRoute, private router: Router) { 
     
   }
 
@@ -35,7 +35,18 @@ export class RolesComponent implements OnInit {
 
   createRole(): void {
     this._roleService.createRoleService(this.serviceId, this.name, this.displayName, this.description, this.onAccess, this.visible, this.type, this.composable, this.bundled, this.accessToken )
-    .subscribe(data=>{console.log(data);})
-    
+    .subscribe({
+      next:data => {
+        // this.openDialog();
+        alert("Role created successfully");
+        console.log(data);
+        this.router.navigate(["dashboard"]);
+      },
+      error:error => {
+        console.log(error);
+         alert("There was a problem in creating the role. Please enter valid data.");
+      }
+    }
+    )
   }
 }
